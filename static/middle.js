@@ -21,9 +21,23 @@ let margin = document.getElementById("margin");
     margin.style.display="none";
 let templates = document.getElementById("templates");
     templates.style.display="none";
+let boxInfo = document.getElementById("boxInfo");
+    boxInfo.style.display="none"
     
+box1 = document.getElementById("box1");
+    box1Text = document.getElementById("box1Text");
+box2 = document.getElementById("box2");
+    box2Text = document.getElementById("box2Text");
+box3 = document.getElementById("box3");
+    box3Text = document.getElementById("box3Text");
+box4 = document.getElementById("box4");
+    box4Text = document.getElementById("box4Text");
+box5 = document.getElementById("box5");
+    box5Text = document.getElementById("box5Text");
+box6 = document.getElementById("box6");
+    box6Text = document.getElementById("box6Text");
 
-
+let inClub = false;
 
 nameSub.onclick = function(){
     const myName = document.getElementById("nameText").value;
@@ -78,8 +92,16 @@ function colorsPop(){
 function marginPop(){
     margin.style.display = "block";
 }
+function templatesPop(){
+    templates.style.display = "block";
+}
+function boxInfoPop(){
+    boxInfo.style.display = "block";
+}
 
-
+function templatesCloser(){
+    templates.style.display = "none";
+}
 function nameCloser(){
     write.style.display= "none";
 }
@@ -88,6 +110,9 @@ function colorCloser(){
 }
 function marginCloser(){
     margin.style.display = "none";
+}
+function boxInfoCloser(){
+    boxInfo.style.display = "none";
 }
 
 //Make the DIV elements draggable:
@@ -126,173 +151,3 @@ function changeBiogColor(biogColor){
     })
     .then(() => {biog.style.color = biogColor});
 }
-/***************** ***************/
-/***************** ***************/
-/* CHANGING MARGINS!!!*/
-/***************** ***************/
-/***************** ***************/
-
-function moveName(direction){
-    if(direction=="right")
-        currentDirect = window.getComputedStyle(user).right;
-    if(direction=="left")
-        currentDirect = window.getComputedStyle(user).right;
-    if(direction=="up")
-        currentDirect = window.getComputedStyle(user).top;
-    if(direction=="bottom")
-        currentDirect = window.getComputedStyle(user).top;
-
-    currentDirect = currentDirect.slice(0,-2);
-
-    if(direction=="right"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) - 10;
-        console.log(currentDirect);
-        user.style.right = currentDirect + "px";
-    }
-    if(direction=="left"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) + 10;
-        console.log(currentDirect);
-        user.style.right = currentDirect + "px";
-    }
-    if(direction=="up"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) - 10;
-        console.log(currentDirect);
-        user.style.top = currentDirect + "px";
-    }
-    if(direction=="bottom"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) + 10;
-        console.log(currentDirect);
-        user.style.top = currentDirect + "px";
-    }
-}
-
-function moveBiog(direction){
-    if(direction=="right")
-        currentDirect = window.getComputedStyle(biog).right;
-    if(direction=="left")
-        currentDirect = window.getComputedStyle(biog).right;
-    if(direction=="up")
-        currentDirect = window.getComputedStyle(biog).top;
-    if(direction=="bottom")
-        currentDirect = window.getComputedStyle(biog).top;
-
-    currentDirect = currentDirect.slice(0,-2);
-
-    if(direction=="right"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) - 10;
-        console.log(currentDirect);
-        biog.style.right = currentDirect + "px";
-    }
-    if(direction=="left"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) + 10;
-        console.log(currentDirect);
-        biog.style.right = currentDirect + "px";
-    }
-    if(direction=="up"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) - 10;
-        console.log(currentDirect);
-        biog.style.top = currentDirect + "px";
-    }
-    if(direction=="bottom"){
-        console.log(direction);
-        currentDirect = Number(currentDirect) + 10;
-        console.log(currentDirect);
-        biog.style.top = currentDirect + "px";
-    }
-}
-
-
-dragElement(write);
-dragElement(colors);
-dragElement(margin);
-dragElement(templates);
-
-function dragElement(elmnt) {
-var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-if (document.getElementById(elmnt.id+"headbar")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id+"headbar").onmousedown = dragMouseDown;
-} else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
-}
-
-function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-}
-
-function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-}
-
-function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-}
-}
-
-
-/* MOVES TO FRONT */
-write.addEventListener('mousedown', (ev) => {
-    write.style.zIndex = 3;
-    colors.style.zIndex = 2;
-    margin.style.zIndex = 2;
-    templates.style.zIndex = 2;
-})
-colors.addEventListener('mousedown', (ev) => {
-    colors.style.zIndex = 3;
-    write.style.zIndex = 2;
-    margin.style.zIndex = 2;
-    templates.style.zIndex = 2;
-})
-margin.addEventListener('mousedown', (ev) => {
-    colors.style.zIndex = 2;
-    write.style.zIndex = 2;
-    margin.style.zIndex = 3;
-    templates.style.zIndex = 2;
-})
-templates.addEventListener('mousedown', (ev) => {
-    colors.style.zIndex = 2;
-    write.style.zIndex = 2;
-    margin.style.zIndex = 2;
-    templates.style.zIndex = 3;
-})
-
-
-function templatesPop(){
-    templates.style.display = "block";
-}
-
-function templatesCloser(){
-    templates.style.display = "none";
-}
-
-function centre(){
-    console.log("it works");
-    document.getElementById("user").style.left = "40%"
-    document.getElementById("biog").style.left = "43%"
-  }

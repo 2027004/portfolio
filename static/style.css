@@ -7,6 +7,10 @@
     top: 100px;
     left: 45%;
 }
+select {
+  position: relative;
+  z-index: 1001; /* bring it to front */
+}
 
 #menuArrow{
     width:134px;
@@ -34,12 +38,14 @@
     border-style: solid;
     background-color: pink;
     z-index:2;
+    height:40%;
 }
 #colors{
     border-color: #7788de;
     border-style: solid;
     background-color: #aaaadd;
     z-index:3;
+    height:40%;
 }
 
 #margin{
@@ -47,6 +53,14 @@
     border-style: solid;
     background-color: #aabbaa;
     z-index:3;
+    height:40%;
+}
+#boxInfo{
+    border-color: #9922ee;
+    border-style: solid;
+    background-color: violet;
+    z-index:2;
+    height:40%;
 }
 
 
@@ -87,6 +101,18 @@
     cursor: move;
     /*z-index: 3;*/
 }
+#boxInfoHeadbar{
+    background-color: white;
+    /*width:240px;
+    height:30px;*/
+    text-align: center;
+    border-color:violet;
+    border-style: solid;
+    top:-30px;
+    padding: 10px;
+    cursor: move;
+    /*z-index: 3;*/
+}
 
 #nameLabel{
     position:relative;
@@ -118,6 +144,11 @@
     right:2px;
     top:2px;
 }
+#boxInfoCloser{
+    position: absolute;
+    right:2px;
+    top:2px;
+}
 
 
 .menuButtons{
@@ -128,19 +159,20 @@
 
 .pops{
     width:60%;
-    height: 40%;
     position:absolute;
     left:30%;
     top:30%;
     z-index: 2;
     text-align: center;
     display: none;
+    overflow:visible;
 }
 #templates{
     border-color: #dd9944;
     border-style: solid;
     background-color: #fabf37;
     z-index:3;
+    height:60%;
 }
 #templatesHeadbar{
     background-color: white;
@@ -160,54 +192,4 @@
     top:2px;
 }
 
-#loginBox{
-    position:absolute;
-    top:38%;
-    left:38%;
-}
-#signinBox{
-    position:absolute;
-    top:28%;
-    left:38%;
-}
-.boxes{
-    border-color: black;
-    border-style: solid;
-    border-width:3px;
-    background-color: none;
-}
-#box1{
-    position:absolute;
-    width:30%;
-    height:49%;
-    left:0%;
-    top:0%;
-}
-#box2{
-    position:absolute;
-    width:30%;
-    height:50%;
-    left:0%;
-    bottom:0%;
-}
-#box3{
-    position:absolute;
-    width:39%;
-    height:49%;
-    left:30.5%;
-    bottom:0%;
-}
-#box4{
-    position:absolute;
-    width:30%;
-    height:50%;
-    right:0%;
-    top:0%;
-}
-#box5{
-    position:absolute;
-    width:30%;
-    height:49%;
-    right:0%;
-    bottom:0%;
-}
+

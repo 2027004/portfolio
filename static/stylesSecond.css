@@ -1,0 +1,64 @@
+#loginBox{
+    position:absolute;
+    top:38%;
+    left:38%;
+}
+#signinBox{
+    position:absolute;
+    top:28%;
+    left:38%;
+}
+
+.boxes{
+    border-color: black;
+    border-style: solid;
+    border-width:2px;
+    background-color: none;
+    align-items: center;
+    text-align: center;
+}
+#box1{
+    position:absolute;
+    width:30%;
+    height:49%;
+    left:0%;
+    bottom:51%;
+}
+#box2{
+    position:absolute;
+    width:30%;
+    height:50.5%;
+    left:0%;
+    bottom:0%;
+}
+#box3{
+    position:absolute;
+    width:39.25%;
+    height:50.5%;
+    left:30.25%;
+    bottom:0%;
+}
+#box4{
+    position:absolute;
+    width:30%;
+    height:49%;
+    left:70%;
+    bottom:51%;
+}
+#box5{
+    position:absolute;
+    width:30%;
+    height:50.5%;
+    left:70%;
+    bottom:0%;
+}
+#box6{
+    position:absolute;
+    width: 0%;
+    height: 0%;
+    left:100%;
+    bottom:0%;
+}
+.boxTexts{
+    text-align: center;
+}
