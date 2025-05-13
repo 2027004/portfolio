@@ -11,7 +11,6 @@ select {
   position: relative;
   z-index: 1001; /* bring it to front */
 }
-
 #menuArrow{
     width:134px;
     height:20px;
@@ -191,5 +190,3 @@ select {
     right:2px;
     top:2px;
 }
-
-
