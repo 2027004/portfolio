@@ -90,6 +90,27 @@ class UserValidate(BaseModel):
     background_color : Optional[str] = None
     name_color : Optional[str] = None
     biog_color : Optional[str] = None
+    #template: Optional[str]=None
+    #NamePositionRight: Optional[str]=None
+    #NamePositionLeft: Optional[str]=None
+    #NamePositionUp: Optional[str]=None
+    #NamePositionDown: Optional[str]=None
+    #BiogPositionRight: Optional[str]=None
+    #BiogPositionLeft: Optional[str]=None
+    #BiogPositionUp: Optional[str]=None
+    #BiogPositionDown: Optional[str]=None
+    #Box1Color: Optional[str]=None
+    #Box2Color: Optional[str]=None
+    #Box3Color: Optional[str]=None
+    #Box4Color: Optional[str]=None
+    #Box5Color: Optional[str]=None
+    #Box6Color: Optional[str]=None
+    #Box1Text: Optional[str]=None
+    #Box2Text: Optional[str]=None
+    #Box3Text: Optional[str]=None
+    #Box4Text: Optional[str]=None
+    #Box5Text: Optional[str]=None
+    #Box6Text: Optional[str]=None
 
 
 @app.get("/")
@@ -197,7 +218,8 @@ async def change_data(user_post: UserValidate, request: Request, db: Session = D
         user.name_color = user_post.name_color
     if user_post.biog_color is not None:
         user.biog_color = user_post.biog_color
-
+    #if user_post.template is not None:
+    #    user.template = user_post.template
     db.commit()  # Commit changes to the database
 
     return {
@@ -206,4 +228,25 @@ async def change_data(user_post: UserValidate, request: Request, db: Session = D
         "background_color": user.background_color,
         "name_color": user.name_color,
         "biog_color": user.biog_color,
+        #"template": user.template,
+        #"NamePositionRight":user.NamePositionRight,
+        #"NamePositionLeft" : user.NamePositionLeft,
+        #"NamePositionUp": user.NamePositionUp,
+        #"NamePositionDown": user.NamePositionDown,
+        #"BiogPositionRight": user.BiogPositionRight,
+        #"BiogPositionLeft": user.BiogPositionLeft,
+        #"BiogPositionUp": user.BiogPositionUp,
+        #"BiogPositionDown": user.BiogPositionDown,
+        #"Box1Color": user.Box1Color,
+        #"Box2Color": user.Box2Color,
+        #"Box3Color": user.Box3Color,
+        #"Box4Color" : user.Box4Color,
+        #"Box5Color": user.Box5Color,
+        #"Box6Color": user.Box6Color,
+        #"Box1Text": user.Box1Text,
+        #"Box2Text": user.Box2Text,
+        #"Box3Text": user.Box3Text,
+        #"Box4Text": user.Box4Text,
+        #"Box5Text": user.Box5Text,
+        #"Box6Text": user.Box6Text,
     }
