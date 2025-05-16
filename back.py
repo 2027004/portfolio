@@ -32,6 +32,28 @@ class Portfolio(Base):
     background_color = Column(String)
     name_color = Column(String)
     biog_color = Column(String)
+    #template
+    #NamePositionRight
+    #NamePositionLeft
+    #NamePositionUp
+    #NamePositionDown
+    #BiogPositionRight
+    #BiogPositionLeft
+    #BiogPositionUp
+    #BiogPositionDown
+    #Box1Color
+    #Box2Color
+    #Box3Color
+    #Box4Color
+    #Box5Color
+    #Box6Color
+    #Box1Text
+    #Box2Text
+    #Box3Text
+    #Box4Text
+    #Box5Text
+    #Box6Text
+    
 
 # Create the tables in the database
 Base.metadata.create_all(bind=engine)
@@ -94,6 +116,27 @@ async def get_data(request: Request, db: Session = Depends(get_db)):
             "background_color": user.background_color,
             "name_color": user.name_color or "white",
             "biog_color": user.biog_color,
+            #"template": user.template,
+            #"NamePositionRight":user.NamePositionRight,
+            #"NamePositionLeft" : user.NamePositionLeft,
+            #"NamePositionUp": user.NamePositionUp,
+            #"NamePositionDown": user.NamePositionDown,
+            #"BiogPositionRight": user.BiogPositionRight,
+            #"BiogPositionLeft": user.BiogPositionLeft,
+            #"BiogPositionUp": user.BiogPositionUp,
+            #"BiogPositionDown": user.BiogPositionDown,
+            #"Box1Color": user.Box1Color,
+            #"Box2Color": user.Box2Color,
+            #"Box3Color": user.Box3Color,
+            #"Box4Color" : user.Box4Color,
+            #"Box5Color": user.Box5Color,
+            #"Box6Color": user.Box6Color,
+            #"Box1Text": user.Box1Text,
+            #"Box2Text": user.Box2Text,
+            #"Box3Text": user.Box3Text,
+            #"Box4Text": user.Box4Text,
+            #"Box5Text": user.Box5Text,
+            #"Box6Text": user.Box6Text,
         }
     else:
         # If user does not exist, return default values
@@ -103,6 +146,27 @@ async def get_data(request: Request, db: Session = Depends(get_db)):
             "background_color": "",
             "name_color": "",
             "biog_color": ""
+            #"template": "",
+            #"NamePositionRight":"",
+            #"NamePositionLeft" : "",
+            #"NamePositionUp": "",
+            #"NamePositionDown":"",
+            #"BiogPositionRight":"",
+            #"BiogPositionLeft": "",
+            #"BiogPositionUp": "",
+            #"BiogPositionDown": "",
+            #"Box1Color": "",
+            #"Box2Color": "",
+            #"Box3Color": "",
+            #"Box4Color" : "",
+            #"Box5Color": "",
+            #"Box6Color": "",
+            #"Box1Text": "",
+            #"Box2Text": "",
+            #"Box3Text": "",
+            #"Box4Text": "",
+            #"Box5Text": ."",
+            #"Box6Text": ."",
         }
 
 
@@ -131,8 +195,6 @@ async def change_data(user_post: UserValidate, request: Request, db: Session = D
         user.background_color = user_post.background_color
     if user_post.name_color is not None:
         user.name_color = user_post.name_color
-        print("Saved name color:", user.name_color)
-
     if user_post.biog_color is not None:
         user.biog_color = user_post.biog_color
 
